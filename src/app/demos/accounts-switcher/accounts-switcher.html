@@ -1,0 +1,81 @@
+<button
+  appDropdownTrigger
+  #t="appDropdownTrigger"
+  [align]="'start'"
+  [offset]="8"
+  cdkOverlayOrigin
+  #origin="cdkOverlayOrigin"
+  type="button"
+  class="group inline-flex min-w-55 items-center gap-2.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-800 shadow-sm transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
+>
+  <span class="size-2.5 shrink-0 rounded-full" [class]="current().dot"></span>
+  <span>{{ current().name }}</span>
+  <span class="font-mono text-xs text-slate-400">••{{ current().last4 }}</span>
+  <svg
+    class="ml-auto size-4 text-slate-400 transition-transform duration-200 group-aria-expanded:rotate-180"
+    viewBox="0 0 16 16" fill="none" aria-hidden="true"
+  >
+    <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</button>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="origin"
+  [cdkConnectedOverlayOpen]="t.store.isOpen()"
+  [cdkConnectedOverlayPositions]="t.positions()"
+  [cdkConnectedOverlayScrollStrategy]="t.scrollStrategy"
+  (overlayOutsideClick)="t.onOutsideClick($event)"
+>
+  <ul
+    [appDropdownPanel]="t.store"
+    class="m-0 max-h-75 min-w-75 list-none overflow-y-auto rounded-2xl border border-slate-200 bg-white p-1.5 shadow-xl outline-none dark:border-slate-700 dark:bg-slate-900"
+  >
+    @if (t.store.isEmpty()) {
+      <li role="presentation" class="px-3 py-8 text-center text-sm text-slate-400">
+        No accounts connected
+      </li>
+    }
+
+    @for (acc of accounts; track acc.id) {
+      <li
+        [appDropdownItem]="t.store"
+        [itemLabel]="acc.name"
+        [itemDisabled]="acc.frozen"
+        (selected)="choose(acc)"
+        class="flex cursor-pointer items-center gap-3 rounded-xl px-2.5 py-2 text-sm text-slate-700 outline-none data-[active]:bg-violet-50 aria-disabled:cursor-not-allowed aria-disabled:opacity-40 dark:text-slate-200 dark:data-[active]:bg-violet-500/10"
+      >
+        <span class="size-2.5 shrink-0 rounded-full" [class]="acc.dot"></span>
+        <span class="flex flex-col leading-tight">
+              <span class="font-medium">{{ acc.name }}</span>
+              <span class="text-xs text-slate-400">{{ acc.kind }} ·{{ ' ' }}••{{ acc.last4 }}</span>
+            </span>
+        @if (acc.frozen) {
+          <span class="ml-1 rounded-md bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-700 dark:bg-amber-500/15 dark:text-amber-400">
+                Frozen
+              </span>
+        }
+        <span
+          [attr.data-sign]="acc.balance.startsWith('-') ? 'neg' : 'pos'"
+          class="ml-auto font-mono text-sm tabular-nums text-slate-900 data-[sign=neg]:text-rose-600 dark:text-slate-100 dark:data-[sign=neg]:text-rose-400"
+        >
+              {{ acc.balance }}
+            </span>
+      </li>
+    }
+
+    <li role="separator" class="mx-2 my-1.5 h-px bg-slate-100 dark:bg-slate-800"></li>
+
+    <li
+      [appDropdownItem]="t.store"
+      [itemLabel]="'Connect new account'"
+      (selected)="connect()"
+      class="flex cursor-pointer items-center gap-2 rounded-xl px-2.5 py-2 text-sm font-medium text-violet-700 outline-none data-[active]:bg-violet-50 dark:text-violet-300 dark:data-[active]:bg-violet-500/10"
+    >
+      <svg viewBox="0 0 16 16" fill="none" class="size-4" aria-hidden="true">
+        <path d="M8 3.5v9M3.5 8h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+      </svg>
+      Connect new account
+    </li>
+  </ul>
+</ng-template>

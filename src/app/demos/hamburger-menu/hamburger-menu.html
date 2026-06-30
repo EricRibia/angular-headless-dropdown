@@ -1,0 +1,43 @@
+<button
+  appDropdownTrigger
+  #t="appDropdownTrigger"
+  [align]="'start'"
+  [offset]="10"
+  cdkOverlayOrigin
+  #origin="cdkOverlayOrigin"
+  type="button"
+  aria-label="Open navigation menu"
+  class="group flex size-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/60 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+>
+  <svg viewBox="0 0 24 24" class="size-5" fill="none" aria-hidden="true">
+    <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+  </svg>
+</button>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="origin"
+  [cdkConnectedOverlayOpen]="t.store.isOpen()"
+  [cdkConnectedOverlayPositions]="t.positions()"
+  [cdkConnectedOverlayScrollStrategy]="t.scrollStrategy"
+  (overlayOutsideClick)="t.onOutsideClick($event)"
+>
+  <ul
+    [appDropdownPanel]="t.store"
+    class="relative m-0 min-w-57.5 list-none rounded-2xl border border-slate-200 bg-white p-1.5 outline-none drop-shadow-[0_8px_24px_rgba(24,28,37,0.16)] before:absolute before:-top-1.75 before:left-4 before:size-3 before:rotate-45 before:rounded-tl-[3px] before:border-l before:border-t before:border-slate-200 before:bg-white before:content-[''] dark:border-slate-700 dark:bg-slate-900 dark:drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)] dark:before:border-slate-700 dark:before:bg-slate-900"
+  >
+    @for (item of nav; track item.label) {
+      <li
+        [appDropdownItem]="t.store"
+        [itemLabel]="item.label"
+        (selected)="go(item.label)"
+        class="flex cursor-pointer items-center gap-3 rounded-xl px-2.5 py-2 text-sm text-slate-700 outline-none data-active:bg-violet-50 dark:text-slate-200 dark:data-active:bg-violet-500/10"
+      >
+        <svg viewBox="0 0 24 24" class="size-4.5 shrink-0 text-slate-400" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path [attr.d]="item.icon" />
+        </svg>
+        {{ item.label }}
+      </li>
+    }
+  </ul>
+</ng-template>
