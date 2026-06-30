@@ -31,7 +31,7 @@ jobs:
         run: pnpm run --if-present lint
 
       - name: Test
-        run: pnpm test -- --watch=false --browsers=ChromeHeadless
+        run: pnpm exec ng test --watch=false
 
       - name: Build
         run: pnpm run build
