@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HamburgerMenu } from './demos/hamburger-menu/hamburger-menu';
 import { AccountsSwitcher } from './demos/accounts-switcher/accounts-switcher';
 import { ThemeService } from './service/theme-service';

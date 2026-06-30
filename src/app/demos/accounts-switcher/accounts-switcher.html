@@ -41,7 +41,7 @@
       <li
         [appDropdownItem]="t.store"
         [itemLabel]="acc.name"
-        [itemDisabled]="acc.frozen"
+        [disabled]="acc.frozen"
         (selected)="choose(acc)"
         class="flex cursor-pointer items-center gap-3 rounded-xl px-2.5 py-2 text-sm text-slate-700 outline-none data-[active]:bg-violet-50 aria-disabled:cursor-not-allowed aria-disabled:opacity-40 dark:text-slate-200 dark:data-[active]:bg-violet-500/10"
       >

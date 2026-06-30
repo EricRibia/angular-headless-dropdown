@@ -60,7 +60,11 @@ export class DropdownStore {
   }
 
   toggle(): void {
-    this.isOpen() ? this.close() : this.open();
+    if (this.isOpen()) {
+      this.close();
+    } else {
+      this.open();
+    }
   }
 
   // Item 1: an internal close (Escape / selection) returns focus to the

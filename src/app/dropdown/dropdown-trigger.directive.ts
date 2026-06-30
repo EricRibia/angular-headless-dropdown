@@ -87,7 +87,11 @@ export class DropdownTriggerDirective {
   onArrow(event: Event, edge: 'first' | 'last'): void {
     event.preventDefault(); // stop the page scrolling under us
     this.store.open();
-    edge === 'first' ? this.store.first() : this.store.last();
+    if(edge === 'first') {
+      this.store.first();
+    }else{
+      this.store.last();
+    }
   }
 
   onOutsideClick(event: MouseEvent): void {

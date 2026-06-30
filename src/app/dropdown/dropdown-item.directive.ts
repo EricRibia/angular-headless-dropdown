@@ -36,9 +36,9 @@ import { DropdownStore } from './dropdown.store';
 export class DropdownItemDirective implements OnInit, OnDestroy {
   /** The shared brain, handed down the same as the panel. */
   readonly store = input.required<DropdownStore>({ alias: 'appDropdownItem' });
-  readonly disabled = input(false, { alias: 'itemDisabled' });
+  readonly disabled = input(false);
   /** Optional explicit typeahead text; falls back to the visible label. */
-  readonly itemLabel = input('', { alias: 'itemLabel' });
+  readonly itemLabel = input('');
   /** Fires when the user chooses this item (click or keyboard). */
   readonly selected = output<void>();
 
