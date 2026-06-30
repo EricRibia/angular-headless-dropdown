@@ -18,7 +18,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9        # match your local pnpm major version
+          version: 11       # match your local pnpm major version
 
       - uses: actions/setup-node@v4
         with:
