@@ -17,8 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       # IMPORTANT: base-href must match your repo name, with slashes.
       - run: npx ng build --configuration production --base-href /angular-headless-dropdown/
       - uses: actions/upload-pages-artifact@v3
