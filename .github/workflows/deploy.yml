@@ -14,16 +14,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9        # match your local pnpm major version
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
+
       - run: pnpm install --frozen-lockfile
-      # IMPORTANT: base-href must match your repo name, with slashes.
-      - run: npx ng build --configuration production --base-href /angular-headless-dropdown/
+
+      - run: pnpm exec ng build --configuration production --base-href /angular-headless-dropdown/
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          # Angular 17+ outputs to dist/<project>/browser
           path: dist/angular-headless-dropdown/browser
 
   deploy:
