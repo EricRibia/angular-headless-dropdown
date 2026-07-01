@@ -166,16 +166,16 @@ Modern Angular (v20+): standalone components, signals, the new control flow, and
 
 [//]: # (- Headless Angular: separate the brain from the skin — *[link]*)
 
-[//]: # ()
-[//]: # (## About)
 
-[//]: # ()
-[//]: # (I'm **Eric Ribia**, a frontend engineer &#40;7+ years&#41; focused on the line where good code meets good design. I build the production layer most tutorials — and most prompts — leave out.)
+## About
 
-[//]: # ()
-[//]: # (- Articles: *[Medium link]*)
 
-[//]: # (- Reach me: *[contact]*)
+I'm **Eric Ribia**, a frontend engineer (7+ years) focused on the line where good code meets good design. I build the production layer most tutorials — and most prompts — leave out.
+
+
+- Articles: [Medium](https://medium.com/@ericribia/the-10-things-ai-forgets-when-it-builds-a-dropdown-dbc99140758a?source=friends_link&sk=523ef0b204bd4e52b7e7d3dbcb6a17f1)
+
+- Reach me: [ericribia@gmail.com](mailto:ericribia@gmail.com)
 
 ## License
 
