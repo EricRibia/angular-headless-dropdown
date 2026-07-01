@@ -154,20 +154,28 @@ Follows the WAI-ARIA menu-button pattern: focus stays on the panel, the active i
 
 Modern Angular (v20+): standalone components, signals, the new control flow, and Angular CDK Overlay for positioning. Tailwind is used in the **demo skins only** — the primitives ship no styles.
 
-## The series
+[//]: # (## The series)
 
-This component is broken down piece by piece in a written series on production-grade UI the AI-generated version skips:
+[//]: # ()
+[//]: # (This component is broken down piece by piece in a written series on production-grade UI the AI-generated version skips:)
 
-- The 10 things AI forgets when it builds a dropdown — *[link]*
-- Don't reinvent dropdown positioning — let CDK flip it — *[link]*
-- Headless Angular: separate the brain from the skin — *[link]*
+[//]: # ()
+[//]: # (- The 10 things AI forgets when it builds a dropdown — *[link]*)
 
-## About
+[//]: # (- Don't reinvent dropdown positioning — let CDK flip it — *[link]*)
 
-I'm **Eric Ribia**, a frontend engineer (7+ years) focused on the line where good code meets good design. I build the production layer most tutorials — and most prompts — leave out.
+[//]: # (- Headless Angular: separate the brain from the skin — *[link]*)
 
-- Articles: *[Medium link]*
-- Reach me: *[contact]*
+[//]: # ()
+[//]: # (## About)
+
+[//]: # ()
+[//]: # (I'm **Eric Ribia**, a frontend engineer &#40;7+ years&#41; focused on the line where good code meets good design. I build the production layer most tutorials — and most prompts — leave out.)
+
+[//]: # ()
+[//]: # (- Articles: *[Medium link]*)
+
+[//]: # (- Reach me: *[contact]*)
 
 ## License
 
