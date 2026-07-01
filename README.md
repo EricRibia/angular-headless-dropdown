@@ -3,14 +3,14 @@
 > A production-grade, fully accessible dropdown for Angular — **headless behavior** you can skin any way you want. The ten things AI quietly skips, all closed.
 
 <!-- Replace these with real badges once CI + deploy are set up -->
-[![Live Demo](https://img.shields.io/badge/demo-live-7c3aed)](https://YOUR-USERNAME.github.io/angular-headless-dropdown/)
-[![CI](https://img.shields.io/badge/CI-passing-22c55e)](#)
+[![Live Demo](https://img.shields.io/badge/demo-live-7c3aed)](https://ericribia.github.io/angular-headless-dropdown)
+[![CI](https://github.com/EricRibia/angular-headless-dropdown/actions/workflows/ci.yml/badge.svg)](https://github.com/EricRibia/angular-headless-dropdown/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 [![Angular](https://img.shields.io/badge/Angular-v22-dd0031)](https://angular.dev)
 
 A dropdown is a button and a list. The naive version is trivial; the version you can actually **ship** — keyboard-complete, screen-reader-correct, viewport-aware — is not. This repo is that second version, built as headless primitives: the behavior is locked and reusable, the presentation is entirely yours.
 
-**Unplug your mouse and try the [live demo](https://YOUR-USERNAME.github.io/angular-headless-dropdown/). Everything still works.**
+**Unplug your mouse and try the [live demo](https://ericribia.github.io/angular-headless-dropdown). Everything still works.**
 
 ![Keyboard-only demo](docs/demo.gif)
 
@@ -64,7 +64,7 @@ Full breakdown with the reasoning behind each: [`docs/10-gotchas.md`](docs/10-go
 ## Quick start
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/angular-headless-dropdown.git
+git clone https://github.com/ericribia/angular-headless-dropdown.git
 cd angular-headless-dropdown
 npm install
 npm start          # http://localhost:4200
