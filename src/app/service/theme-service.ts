@@ -40,6 +40,6 @@ export class ThemeService {
   }
 
   private systemPreference(): Theme {
-    return this.systemQuery.matches ? 'dark' : 'light';
+    return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
 }
